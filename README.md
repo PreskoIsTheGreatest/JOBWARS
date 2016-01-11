@@ -10,7 +10,7 @@
   It is deployed in Heroku:
   [JobWars](https://jobwars.herokuapp.com)
   
-  Before you run it, you have to add connection.js file where you create instances of knex and bookshelf
+  Before you run it, you have to add connection.js file, where you create instances of knex and bookshelf
   with you db configuration.
   
   Then, you must run:
