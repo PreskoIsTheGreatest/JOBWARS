@@ -1,0 +1,11 @@
+<nav>
+    <ul class="nav nav-tabs">
+        <li><a [routerLink]="['/SeekerJobposts']">Oбяви</a></li>
+        <li><a [routerLink]="['/SeekerApplied']">Къде съм кандидатсвал</a></li>
+        <li onclick="loadForm();" ><a onclick="loadForm();"  [routerLink]="['/SeekerProfile']">Профил</a></li>
+        <li><a href="/logout">Изход</a></li>
+    </ul>
+</nav>
+<main>
+    <router-outlet></router-outlet>
+</main>

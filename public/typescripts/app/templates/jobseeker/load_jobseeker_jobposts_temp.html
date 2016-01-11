@@ -1,0 +1,31 @@
+<form>
+    <div [hidden]="isNotShowSuccess" class="alert alert-success"  style="margin-top: 2%;">
+        <button (click)="isNotShowSuccess=true" type="button" class="close">×</button>
+        Успешно кандидатствахте по обявата!!!
+    </div>
+    <div style="height: 100% !important;overflow-y: auto !important;">
+        <div class="job_posts_tab">
+            <table class="table table-bordered">
+                <tr *ngFor="#jobpost of renderArray">
+                    <td>
+                        <div class="wrapper">
+                            <h3 style="width:auto;color: #26a673;">{{jobpost.header}}</h3>
+                        </div>
+                        <div>{{jobpost.description}}</div>
+                        <div>
+                            <div *ngFor="#rel of jobpost.post_rel" class="post-tag">
+                                {{rel.skill.name}}
+                            </div>
+                            <div [hidden]="!jobpost.applied">
+                                <button class="red" type="submit">Вече е кандидатствано по обявата</button>
+                            </div>
+                            <div [hidden]="jobpost.applied">
+                                <button (click)="apply(jobpost.id)" class="green">Кандидатствай</button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</form>

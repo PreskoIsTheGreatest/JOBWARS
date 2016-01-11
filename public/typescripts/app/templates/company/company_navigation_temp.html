@@ -1,0 +1,12 @@
+<nav>
+    <ul class="nav nav-tabs">
+        <li><a [routerLink]="['/Jobposts']">Виж моите обяви</a></li>
+        <li onclick="loadForm();"><a onclick="loadForm();" [routerLink]="['/Publish']">Публикувай обява</a></li>
+        <li><a [routerLink]="['/Candidates']">Кандидати</a></li>
+        <li><a [routerLink]="['/Profile']">Профил</a></li>
+        <li><a href="/logout">Изход</a></li>
+    </ul>
+</nav>
+<main>
+    <router-outlet></router-outlet>
+</main>

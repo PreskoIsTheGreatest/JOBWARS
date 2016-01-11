@@ -1,0 +1,28 @@
+table, tr, td {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    text-overflow: ellipsis;
+}
+
+.post-tag {
+    color: #26a673;
+    font-size: 12px;
+    white-space: nowrap;
+    background: #e4edf4;
+    border: 1px solid #e4edf4;
+    display: inline-block;
+    margin: 2px 2px 2px 0;
+    border-radius: 0;
+}
+
+.wrapper {
+    max-height: 112px;
+    width: 500px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.job_posts_tab {
+    height: 300px;
+}

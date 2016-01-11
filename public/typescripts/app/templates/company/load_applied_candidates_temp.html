@@ -1,0 +1,18 @@
+<form>
+    <div class="job_posts_tab">
+        <select (change)="loadAppliedTable($event);" class="form-control"
+                style="margin-bottom: 5%;">
+            <option *ngFor="#jobpost of service.jobposts" [value]="jobpost.id">
+                {{jobpost.header}}
+            </option>
+        </select>
+        <table>
+            <tr *ngFor="#jobseeker of jobseekers">
+                <td>
+                    <div>{{jobseeker.full_name}}</div>
+                    <div class="post-tag" *ngFor="#rel of jobseeker.skill_rel">{{rel.skill.name}}</div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</form>`

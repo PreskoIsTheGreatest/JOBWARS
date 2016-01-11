@@ -1,0 +1,23 @@
+<form (ngSubmit)="editJobSeeker(tags.value);" method="post">
+    <div>
+        <div class="input-group" style="width: 70%">
+            <label>Имена</label>
+            <input [(ngModel)]="model.full_name" class="form-control" type="text"/>
+        </div>
+        <div class="input-group" style="width: 70%">
+            <label>Предпочитана позиция</label>
+            <input [(ngModel)]="model.desired_position" class="form-control" type="text"/>
+        </div>
+        <div class="input-group" style="width: 100%">
+            <label>Тагове</label>
+            <input #tags [ngModel]="model.typeahead_tags" type="text" class="form-control" id="tokenfield-typeahead"/>
+        </div>
+        <div style="width: 100%;margin-top: 2%;">
+            <input class="btn btn-default" type="submit" value="Запис"/>
+        </div>
+        <div [hidden]="isNotShowSuccess" class="alert alert-success"  style="margin-top: 2%;">
+            <button (click)="isNotShowSuccess=true" type="button" class="close">×</button>
+            Успешен запис!
+        </div>
+    </div>
+</form>

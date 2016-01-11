@@ -1,0 +1,15 @@
+.green{
+    background-color: #26a673;
+    border: none;
+    padding: 5px 8px 5px 8px;
+    margin-top: 8px;
+    color: white;
+}
+
+.red{
+    background-color: #c9302c;
+    border: none;
+    padding: 5px 8px 5px 8px;
+    margin-top: 8px;
+    color: white;
+}

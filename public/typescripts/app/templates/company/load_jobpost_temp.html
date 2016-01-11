@@ -1,0 +1,24 @@
+<div style="height: 100% !important;overflow-y: auto !important;">
+    <div class="job_posts_tab">
+        <div>
+            <form>
+                <table class="table table-bordered">
+                    <tr *ngFor="#jobpost of service.jobposts">
+                        <td>
+                            <div class="wrapper">
+                                <h3 style="width:auto;color: #26a673;">{{jobpost.header}}</h3>
+                            </div>
+                            <div>{{jobpost.description}}
+                            </div>
+                            <div>
+                                <div *ngFor="#rel of jobpost.post_rel" class="post-tag">
+                                    {{rel.skill.name}}
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+</div>

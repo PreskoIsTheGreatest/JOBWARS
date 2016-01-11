@@ -1,0 +1,68 @@
+.regType {
+    float: left;
+    width: 280px;
+}
+
+.regType > img {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#or {
+    margin: 3px auto 3px auto;
+    color: #26a673;
+    font-size: 18pt;
+}
+
+#form {
+    display: table;
+    margin-top: 80px;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.btn-new {
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid #adadad;
+    border-radius: 4px;
+}
+.btn-new:focus,
+.btn-new:active:focus,
+.btn-new.active:focus,
+.btn-new.focus,
+.btn-new:active.focus,
+.btn-new.active.focus {
+    outline: thin dotted;
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px;
+}
+.btn-new:hover,
+.btn-new:focus,
+.btn-new.focus {
+    color: #333;
+    text-decoration: none;
+}
+.btn-new:active,
+.btn-new.active {
+    background-image: none;
+    outline: 0;
+    -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+}
