@@ -5,7 +5,7 @@
   
   I have won three business competitions with that project.
   
-  The app is written in Node.js with Express, PostgreSQL, Knex and Bookshelf, Angular2-Beta, Boostrap.
+  The app is written in Node.js with Express, PostgreSQL, Knex and Bookshelf, Passport, Angular2-Beta, Boostrap.
   
   It is deployed in Heroku:
   [JobWars](https://jobwars.herokuapp.com)
