@@ -37,7 +37,7 @@
 * Express for http 	queries 
 * PostgreSQL for database 
 * Knex for connection to the database
-* Bookshelf as a ORM to the datebase
+* Bookshelf as a ORM to the database
 * Passport for authentication
 * Angular2-Beta as a frontend framework
 * Boostrap for purpose of style.
