@@ -5,6 +5,10 @@
   skills and the program creates matchmaking between them. 
   
   I have won three business competitions with that project.
+  
+  It is deployed in Heroku:
+  [JobWars](https://jobwars.herokuapp.com)
+  
 ##Functional 
   
   The project currently has:
@@ -37,10 +41,11 @@
 * Passport for authentication
 * Angular2-Beta as a frontend framework
 * Boostrap for purpose of style.
+* Mocha and supertest for testing
+* Bcrypt for crypting and decrypting the passwords
   
-  It is deployed in Heroku:
-  [JobWars](https://jobwars.herokuapp.com)
-  
+##Deployment
+
   Before you run it, you have to add connection.js file, where you create instances of knex and bookshelf
   with you db configuration.
   
@@ -51,9 +56,12 @@
     
     npm run tsc
     
+    npm run test
+    
     node index.js
   ```
   
-  Where npm run tsc, compiles the angular2 typescript files.
+  Where npm run tsc, compiles the angular2 typescript files and
+  npm run tests run mocha tests
   
 
