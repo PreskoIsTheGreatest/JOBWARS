@@ -26,9 +26,10 @@
 * Load JobPosts, which the current JobSeeker has applied
 * Edit JobSeeker Profile
 * Logout
-   
+
 ##Technology
-    The app is written in Node.js with 
+  The app is written in Node.js with 
+
 * Express for http 	queries 
 * PostgreSQL for database 
 * Knex for connection to the database
