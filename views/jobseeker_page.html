@@ -7,9 +7,9 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/bootstrap-tokenfield.min.css">
     <link rel="stylesheet" type="text/css" href="stylesheets/tokenfield-typeahead.min.css">
 </head>
-<body onload="loadForm();">
-<div class="centered tab-content" style="top:35%;">
-    <div id="logoContainer" style="margin-top: 25%;"></div>
+<body>
+<div class="centered tab-content" style="margin-top:22%;">
+    <div id="logoContainer"></div>
     <jobseeker>LOADING...</jobseeker>
 </div>
 <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
@@ -18,16 +18,16 @@
 <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
 <script src="node_modules/angular2/bundles/http.js"></script>
 <script src="node_modules/angular2/bundles/router.dev.js"></script>
-<script src="javascripts/jquery-2.1.3.min.js"></script>
-<script src="javascripts/bootstrap.min.js"></script>
-<script src="javascripts/bootstrap-tokenfield.min.js"></script>
-<script src="javascripts/typeahead.bundle.min.js"></script>
-<script src="javascripts/loadBloodHound.js"></script>
 <script>
     System.config({
         packages: {'typescripts': {defaultExtension: 'js'}}
     });
     System.import('typescripts/app/jobseeker/jobseeker_navigation').then(null, console.error.bind(console));
 </script>
+<script src="javascripts/jquery-2.1.3.min.js"></script>
+<script src="javascripts/bootstrap.min.js"></script>
+<script src="javascripts/bootstrap-tokenfield.min.js"></script>
+<script src="javascripts/typeahead.bundle.min.js"></script>
+<script src="javascripts/loadBloodHound.js"></script>
 </body>
 </html>

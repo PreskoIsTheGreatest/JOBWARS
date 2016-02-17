@@ -1,6 +1,4 @@
 table, tr, td {
-    margin-left: auto;
-    margin-right: auto;
     text-align: center;
     text-overflow: ellipsis;
 }

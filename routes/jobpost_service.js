@@ -19,7 +19,7 @@ module.exports = function (express, isAllowedRole, db) {
         require('connect-ensure-login').ensureLoggedIn(),
         isAllowedRole('company'),
         function (req, res) {
-            var company_id = parseInt(req.user.company.company_id);
+            var company_id = parseInt(req.user.company.id);
             db.jobpost.findByCompany(company_id, r=>res.json(r));
         });
 
@@ -57,15 +57,22 @@ module.exports = function (express, isAllowedRole, db) {
         function (req, res) {
             var skills_ids = req.user.jobseeker.skill_rel.map(r=>parseInt(r.skill.id));
             db.jobpost.findByUser(skills_ids, result=> {
-                var preRenderArr = result.toJSON().map(el=>el.jobpost);
-                    var applied = req.user.jobseeker.jobseeker_post.map(el=>el.jobpost);
-                    var appliedIds = applied.map(a=>parseInt(a.id));
-                    var renderArray = preRenderArr.map(el=> {
-                        var isIn = (appliedIds.indexOf(parseInt(el.id)) !== -1);
-                        el.applied = isIn;
-                        return el;
-                    });
-                    res.json(renderArray);
+                var preRenderArr = result.toJSON().map(el=>el.jobpost).sort((a, b)=>a.id !== b.id).reduce((ac, el)=> {
+                    if (ac.length===0) {
+                        ac.push(el)
+                    } else if (ac.length > 0 && ac[ac.length - 1].id !== el.id) {
+                        ac.push(el)
+                    }
+                    return ac;
+                }, []);
+                var applied = req.user.jobseeker.jobseeker_post.map(el=>el.jobpost);
+                var appliedIds = applied.map(a=>parseInt(a.id));
+                var renderArray = preRenderArr.map(el=> {
+                    var isIn = (appliedIds.indexOf(parseInt(el.id)) !== -1);
+                    el.applied = isIn;
+                    return el;
+                });
+                res.json(renderArray);
             });
         });
 
@@ -90,6 +97,7 @@ module.exports = function (express, isAllowedRole, db) {
         });
 
     router.get('/skills',
+        require('connect-ensure-login').ensureLoggedIn(),
         function (req, res) {
             db.skill.findAll(function (skills) {
                 res.send(skills);

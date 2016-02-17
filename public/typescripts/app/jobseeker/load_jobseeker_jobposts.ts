@@ -39,6 +39,7 @@ export class JobSeekerJobPostsComponent {
     reloadJobPosts(closed:boolean){
         this.http.get('jobpost/jobseeker/render')
             .subscribe(jobposts=> {
+                console.log( jobposts.json());
                 this.renderArray = jobposts.json();
                 this.isNotShowSuccess=closed;
             })

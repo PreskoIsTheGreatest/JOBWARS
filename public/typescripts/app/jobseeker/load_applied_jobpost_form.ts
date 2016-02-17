@@ -17,7 +17,7 @@ export class AppliedJobPostComponent {
     constructor(public http:Http) {
         this.http.get('/jobpost/jobseeker/applied')
             .subscribe(data => {
-                this.jobposts = data.json().map(el=>el.jobpost);
+                    this.jobposts = data.json().map(el=>el.jobpost);
             });
     }
 }

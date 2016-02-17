@@ -3,6 +3,7 @@ import {CORE_DIRECTIVES, FORM_DIRECTIVES} from 'angular2/common';
 import {bootstrap} from 'angular2/platform/browser';
 import {Http, HTTP_PROVIDERS,Headers} from 'angular2/http';
 import { JobPost } from '../models/jobpost';
+import {JobPostsService} from '../services/jobposts'
 
 declare var skills:any;
 
@@ -11,14 +12,15 @@ declare var skills:any;
     viewProviders: [HTTP_PROVIDERS],
     templateUrl: 'typescripts/app/templates/company/create_job_post_temp.html',
     styleUrls:['stylesheets/validation.css'],
-    directives: [CORE_DIRECTIVES, FORM_DIRECTIVES]
+    directives: [CORE_DIRECTIVES, FORM_DIRECTIVES],
+    providers: [JobPostsService]
 })
 export class JobPostFormComponent {
 
     public model:JobPost;
     public isNotShowSuccess:boolean;
 
-    constructor(public http:Http) {
+    constructor(public http:Http,public service:JobPostsService) {
         this.model = new JobPost("", "", "");
         this.isNotShowSuccess=true;
     }
@@ -44,6 +46,7 @@ export class JobPostFormComponent {
         }).subscribe(res => {
             this.isNotShowSuccess=false;
             tags.value="";
+            this.service.reloadObservable();
         });
 
         this.model = new JobPost("", "", "");

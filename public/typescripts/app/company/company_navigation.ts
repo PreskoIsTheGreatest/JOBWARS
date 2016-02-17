@@ -20,11 +20,11 @@ declare var System:any;
         name: 'Jobposts',
         useAsDefault: true
     }),
-    new AsyncRoute({
+    {
         path: '/publish',
-        loader: ()=>System.import('./typescripts/app/company/create_jobpost_form').then(m=>m.JobPostFormComponent),
+        component:JobPostFormComponent,
         name: 'Publish'
-    }),
+    },
     new AsyncRoute({
         path: '/candidates',
         loader: ()=>System.import('./typescripts/app/company/load_applied_candidates').then(m=>m.AppliedCandidatesComponent),

@@ -14,7 +14,11 @@ export class JobPostsService {
 
     public reloadObservable(){
         this.http.get('/jobpost/company').subscribe(jobposts => {
-            this.jobposts = jobposts.json();
+            if(!Array.isArray(jobposts.json())){
+                this.jobposts =[jobposts.json()]
+            }else{
+                this.jobposts = jobposts.json();
+            }
         });
     }
 }

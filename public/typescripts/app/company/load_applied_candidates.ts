@@ -16,7 +16,8 @@ export class AppliedCandidatesComponent {
 
     public jobseekers;
 
-    constructor(public http:Http,public service:JobPostsService) {}
+    constructor(public http:Http,public service:JobPostsService) {
+    }
 
 
     loadAppliedTable(event) {

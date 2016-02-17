@@ -24,9 +24,10 @@ declare var System:any;
         loader: ()=>System.import('./typescripts/app/jobseeker/load_applied_jobpost_form').then(m=>m.AppliedJobPostComponent),
         name: 'SeekerApplied'
     }),
-    new AsyncRoute({
+    new AsyncRoute(
+    {
         path: '/profile',
-        loader: ()=>System.import('./typescripts/app/jobseeker/jobseeker_profile').then(m=>m.JobSeekerFormComponent),
+        loader:()=>System.import('./typescripts/app/jobseeker/jobseeker_profile').then(m=>m.JobSeekerFormComponent),
         name: 'SeekerProfile'
     })
 ])

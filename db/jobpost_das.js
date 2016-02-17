@@ -13,7 +13,7 @@ exports.createJobPost = function (new_post, tags) {
 };
 
 exports.findByCompany = function (company_id, cb) {
-    new models.JobPost({company_id}).fetchAll({withRelated: ['post_rel.skill']}).then(p=>cb(p));
+    models.JobPost.where({company_id:company_id}).fetchAll({withRelated: ['post_rel.skill']}).then(p=>cb(p));
 };
 
 exports.findByUser = function (skills, cb) {

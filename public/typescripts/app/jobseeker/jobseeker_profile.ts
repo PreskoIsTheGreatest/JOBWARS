@@ -18,15 +18,15 @@ export class JobSeekerFormComponent {
     public isNotShowSuccess:boolean;
 
     constructor(public http:Http) {
-        this.model = new JobSeeker("", "", "");
+        this.model = new JobSeeker("", "","");
         this.http.get('/jobseeker/current')
             .subscribe(data => {
                 let jobseeker = data.json();
                 let full_name:string = jobseeker.full_name;
                 let desired_position:string = jobseeker.desired_position;
-                let typeahead_tags = jobseeker.skill_rel.map(r=>r.skill.name).join(', ');
-                this.model = new JobSeeker(full_name, desired_position, typeahead_tags);
-            });
+                let typeahead_tags:string = jobseeker.skill_rel.map(r=>r.skill.name).join(', ');
+                this.model = new JobSeeker(full_name, desired_position,typeahead_tags);
+            },(err)=>console.log(err));
         this.isNotShowSuccess=true;
     };
 

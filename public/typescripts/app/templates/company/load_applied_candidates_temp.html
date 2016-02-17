@@ -1,12 +1,13 @@
 <form>
-    <div class="job_posts_tab">
+    <div class="job_posts_tab" >
         <select (change)="loadAppliedTable($event);" class="form-control"
                 style="margin-bottom: 5%;">
+            <option [value]="0">Неизбрано</option>
             <option *ngFor="#jobpost of service.jobposts" [value]="jobpost.id">
                 {{jobpost.header}}
             </option>
         </select>
-        <table>
+        <table style="width: 100%;">
             <tr *ngFor="#jobseeker of jobseekers">
                 <td>
                     <div>{{jobseeker.full_name}}</div>
