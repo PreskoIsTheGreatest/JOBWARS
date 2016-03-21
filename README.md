@@ -46,8 +46,8 @@
   
 ##Deployment
 
-  Before you run it, you have to add connection.js file, where you create instances of knex and bookshelf
-  with you db configuration.
+  Before you run it, you have to add connection.js file in the db folder, where you export created 
+  instances of knex and bookshelf with you db configuration.
   
   Then, you must run:
   
